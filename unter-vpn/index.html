@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unter VPN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="theme-color" content="#0d1b3e">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка -->
+        <div class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>Unter VPN</h1>
+                    <p class="tagline">Безопасное подключение</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Основной контент -->
+        <main class="main-content">
+            <div class="content-card">
+                <div class="content-header">
+                    <h2><i class="fas fa-mobile-alt"></i> Выберите устройство</h2>
+                    <p class="subtitle">Выберите ваше устройство для настройки подключения</p>
+                </div>
+
+                <!-- Список устройств -->
+                <div class="devices-list">
+                    <div class="device-item" data-device="ios">
+                        <div class="device-icon">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <div class="device-info">
+                            <h3>iPhone / iPad</h3>
+                            <p>Устройства Apple iOS</p>
+                        </div>
+                        <div class="device-check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+
+                    <div class="device-item" data-device="android">
+                        <div class="device-icon">
+                            <i class="fab fa-android"></i>
+                        </div>
+                        <div class="device-info">
+                            <h3>Android</h3>
+                            <p>Смартфоны и планшеты Android</p>
+                        </div>
+                        <div class="device-check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+
+                    <div class="device-item" data-device="windows">
+                        <div class="device-icon">
+                            <i class="fab fa-windows"></i>
+                        </div>
+                        <div class="device-info">
+                            <h3>Windows</h3>
+                            <p>Компьютеры и ноутбуки Windows</p>
+                        </div>
+                        <div class="device-check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+
+                    <div class="device-item" data-device="macos">
+                        <div class="device-icon">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <div class="device-info">
+                            <h3>macOS</h3>
+                            <p>MacBook, iMac и Mac</p>
+                        </div>
+                        <div class="device-check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+
+                    <div class="device-item" data-device="tv">
+                        <div class="device-icon">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                        <div class="device-info">
+                            <h3>Android TV / Apple TV</h3>
+                            <p>Умные телевизоры и приставки</p>
+                        </div>
+                        <div class="device-check">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Разделитель -->
+                <div class="divider">
+                    <hr>
+                    <span>или</span>
+                </div>
+
+                <!-- Дополнительное устройство -->
+                <div class="additional-device">
+                    <button class="add-device-btn" id="addDeviceBtn">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Подключить дополнительное устройство</span>
+                    </button>
+                </div>
+
+                <!-- Информация о приложении -->
+                <div class="app-info">
+                    <div class="app-icon">
+                        <div class="v2ray-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="app-details">
+                            <h4>Используйте приложение</h4>
+                            <p>v2rayTUN - для подключения по протоколу V2Ray</p>
+                        </div>
+                    </div>
+                    <div class="app-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-text">Скачайте приложение v2rayTUN</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-text">Выберите ваше устройство выше</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-text">Получите ключ в Telegram боте</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Кнопка внизу -->
+        <div class="bottom-action">
+            <a href="https://t.me/untervpn_bot?key=1" class="install-btn" target="_blank" id="telegramBtn">
+                <i class="fab fa-telegram"></i>
+                <span>Я установил</span>
+            </a>
+            <p class="action-note">Перейти в Telegram бота для получения ключа</p>
+        </div>
+
+        <!-- Модальное окно для дополнительного устройства -->
+        <div class="modal" id="deviceModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Подключить дополнительное устройство</h3>
+                    <button class="modal-close" id="closeModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Для подключения дополнительного устройства:</p>
+                    <ol>
+                        <li>Установите v2rayTUN на устройство</li>
+                        <li>Нажмите кнопку "Я установил" ниже</li>
+                        <li>Получите ключ в Telegram боте</li>
+                        <li>Импортируйте ключ в приложение</li>
+                    </ol>
+                    <div class="qr-code">
+                        <div class="qr-placeholder">
+                            <i class="fas fa-qrcode"></i>
+                            <p>Отсканируйте QR-код в приложении v2rayTUN</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" onclick="document.getElementById('deviceModal').classList.remove('show')">
+                        Закрыть
+                    </button>
+                    <a href="https://t.me/untervpn_bot?key=1" class="btn-primary" target="_blank">
+                        <i class="fab fa-telegram"></i>
+                        Перейти в бота
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Всплывающее уведомление -->
+        <div class="notification" id="notification"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
